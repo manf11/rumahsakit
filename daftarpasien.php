@@ -31,10 +31,6 @@ include "koneksi.php";
         <li class="nav-item">
           <a class="nav-link" href="kontakkami.php">Kontak kami</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="daftarpasien.php">daftar pasien</a>
-        </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Spesialis
@@ -47,50 +43,13 @@ include "koneksi.php";
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Cari Pasien" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success" name="tmb_cari" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
-<div class="container">
-      <div class="card mt-2">
-        <h2 class="card-header ">FORM PENDAFTARAN </h2>
-          <div class="card-body">
-          <form class="row g-3" method="POST" action="prosestambah.php">
-          <div class="form-floating mb-0">
-  <input name="nama_pasien" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-  <label for="floatingInput">Nama Pasien</label>
-</div>
-          <div class="mb-2">
-              <label for="form-label">jenis kelamin</label>
-              <br>
-              <select class="form-select" name="jenis_kelamin" aria-label="Default select example">
-            <option selected aria-placeholder="jenis-kelamin"></option>
-            <option value="laki-laki">laki-laki</option>
-            <option value="perempuan">perempuan</option>
-          </select>
-        <div class="mb-2">
-          <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
-          <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">penyakit</label>
-            <input type="text" name="penyakit" class="form-control" id="exampleFormControlInput1" placeholder="">
-          </div>
-  <div class="col-12 mt-2">
-    <button type="submit" class="btn btn-primary">Daftar</button>
-  </div>
-</form>
-              </div>
-              </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<div class="container-fluid col-6 mt-5">
+
+<div class="container-fluid col-8 mt-5">
   <h1 class="display-3 text-center">DAFTAR PASIEN</h1>
   <table class="table table-dark table-hover">
     <tr>
@@ -99,6 +58,7 @@ include "koneksi.php";
       <th>jenis kelamin</th>
       <th>alamat</th>
       <th>penyakit</th>
+      <th>aksi</th>
     </tr>
     <?php
     $no = 1;
@@ -111,10 +71,14 @@ include "koneksi.php";
         <td><?php echo $pasien['jenis_kelamin'];?></td>
         <td><?php echo $pasien['alamat'];?></td>
         <td><?php echo $pasien['penyakit'];?></td>
+        <td>
+            <a class="btn btn-warning" href="editpasien.php?id=<?php echo $pasien['id_pasien'];?>">edit</a>
+            <a class="btn btn-danger" href="hapuspasien.php?id=<?php echo $pasien['id_pasien'];?>">hapus</a>
+        </td>
       </tr>
       <?php } ?>
   </table>
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </body>
 </html>

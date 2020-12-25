@@ -45,8 +45,8 @@
     </div>
   </div>
 </nav>
-<br>
-<div class="card mb-3" style="max-width: 500px;">
+<div class="container-fluid col-5"><br><br><br><br><br><br><br><br>
+<div class="card mb-3" style="max-width: 700px;">
   <div class="row no-gutters">
     <div class="col-md-4">
       <img src="WhatsApp Image 2020-02-25 at 19.29.57 copy.jpeg.jpg" class="card-img" alt="...">
@@ -65,6 +65,6 @@
   </div>
 </div>
 </div>
-
+</div>
 </body>
 </html>
